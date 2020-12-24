@@ -1,0 +1,27 @@
+{% extends 'app1/main.html' %}
+{% load static %}
+<!---->
+{% block content %}
+<!-- -->
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+
+<div class="row">
+     {% for i in products %}
+
+     
+          <div class='box-element'>
+               <img src="{% static 'images/placeholder.png' %}" alt="Snow" style="width:100%">
+               <h2><strong>{{i.product_name}}</strong></h2>
+                         <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
+                         <a class="btn btn-outline-success" href="#">View</a>
+                         <h4 style="display: inline-block; float: right"><strong>{{i.price}}</strong></h4>
+          </div>
+     
+
+     {% endfor%}
+</div>
+<!---->
+{% endblock content %}
+<!-- -->
