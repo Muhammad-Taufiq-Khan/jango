@@ -4,22 +4,21 @@
 {% block content %}
 <!-- -->
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
 
 
 <div class="row">
      {% for i in products %}
 
-     
+     <div class='col-lg-4'>
           <div class='box-element'>
-               <img src="{% static 'images/placeholder.png' %}" alt="Snow" style="width:100%">
+               <img class='thumbnail'width="360" height="400" src="{{i.imageURL}}" alt="Snow" style="width:100%">
                <h2><strong>{{i.product_name}}</strong></h2>
                          <button  class="btn btn-outline-secondary add-btn">Add to Cart</button>
                          <a class="btn btn-outline-success" href="#">View</a>
-                         <h4 style="display: inline-block; float: right"><strong>{{i.price}}</strong></h4>
+                         <h4 style="float: right"><strong>${{i.price}}</strong></h4>
           </div>
      
-
+	</div>
      {% endfor%}
 </div>
 <!---->

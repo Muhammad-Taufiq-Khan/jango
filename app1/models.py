@@ -1,15 +1,23 @@
 from django.db import models
 
-# Create your models here.
-
-#from django.contrib.auth.models import User
-
-
 class Product(models.Model):
-    product_name = models.CharField(max_length = 50, null =  True)
-    price = models.FloatField(null= True, blank = True )
-   # catagory = models.CharField()
-   # image = 
+
+    
+    CATAGORY = models.TextChoices('CATAGORY','Men Women Kid Other')
+    product_name = models.CharField(max_length = 50, null =True)
+    price = models.FloatField()
+    image = models.ImageField(null = True, blank = True)
+    catagory = models.CharField(blank = True, choices = CATAGORY.choices, max_length = 10 )
+    
+    @property
+    def imageURL (self):
+        try:
+            url = self.image.url
+        
+        except:
+            url = ''
+        return url
 
     def __str__(self):
-       return self.product_name
+        return self.product_name
+  
