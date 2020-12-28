@@ -1,0 +1,19 @@
+
+info of {{ userinfo.user_name }}
+<br>
+<br>
+<br>
+user email: {{ userinfo.email }}
+<br>
+user phone: {{ userinfo.phone }}
+<br>
+user Address: {{ userinfo.address }}
+<br>
+<img src="{{ userinfo.image.url }}" alt="Girl in a jacket">
+<br>
+<button onclick="location.href='{% url 'useredit' %}'" type="button">Edit</button>
+<br>
+<button onclick="location.href='{% url 'changePass' %}'" type="button">change password</button>
+<br>
+
+

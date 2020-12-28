@@ -1,0 +1,20 @@
+
+{% if user.is_authenticated %}
+
+<h2>Register a user</h2>
+<button onclick="location.href='{% url 'view_all_user' %}'" type="button">back to All users</button>
+{% else %}
+Already have an account?
+<button onclick="location.href='{% url 'userlogin' %}'" type="button">Login</button>
+instead
+{% endif %}
+<br>
+<br>
+
+<form method="POST" action="."> {% csrf_token %}
+   <br>
+   {{ form.as_p }}
+   <br>
+   <input type="submit" value="Sign Up">
+</form>
+
